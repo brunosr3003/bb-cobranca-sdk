@@ -1,0 +1,51 @@
+{
+  "name": "bb-cobranca-sdk",
+  "version": "0.1.0",
+  "description": "TypeScript client for the Banco do Brasil Cobran\u00e7as v2 API: boletos, PIX on boletos, OAuth token caching and typed errors. Zero dependencies.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --import tsx --test test/*.test.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "banco-do-brasil",
+    "bb",
+    "boleto",
+    "cobranca",
+    "pix",
+    "payments",
+    "brazil",
+    "api-client",
+    "typescript"
+  ],
+  "author": "Bruno Soares Reis (https://github.com/brunosr3003)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunosr3003/bb-cobranca-sdk.git"
+  },
+  "homepage": "https://github.com/brunosr3003/bb-cobranca-sdk#readme",
+  "bugs": "https://github.com/brunosr3003/bb-cobranca-sdk/issues",
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4"
+  }
+}
